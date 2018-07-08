@@ -85,10 +85,36 @@ public class PartidoDaoImpl extends AbstractDao implements PartidoDao {
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Partido> getListaDePartidosDelTorneo(Torneo torneo) {
-		return getSession().createCriteria(Partido.class)
+		Partido partido = new Partido();
+		List<Partido> listaDePartidos = new ArrayList<Partido>();
+		List<Partido> partidos = getSession().createCriteria(Partido.class)
 				.createAlias("fecha", "f")
 				.add(Restrictions.eq("f.torneo", torneo))
 				.list();
+		for(Partido p : partidos){
+			if(!listaDePartidos.contains(p)){
+				listaDePartidos.add(p);
+			}
+		}	
+		return listaDePartidos;
+	}
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Partido> getListaDePartidosDelTorneoFinalizados(Torneo torneo) {
+		Partido partido = new Partido();
+		List<Partido> listaDePartidos = new ArrayList<Partido>();
+		List<Partido> partidos = getSession().createCriteria(Partido.class)
+				.createAlias("fecha", "f")
+				.add(Restrictions.eq("f.torneo", torneo))
+				.add(Restrictions.eq("finalizado", true))
+				.list();
+		for(Partido p : partidos){
+			if(!listaDePartidos.contains(p)){
+				listaDePartidos.add(p);
+			}
+		}	
+		return listaDePartidos;
 	}
 	
 	@Override

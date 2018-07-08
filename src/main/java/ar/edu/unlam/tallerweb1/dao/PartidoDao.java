@@ -23,6 +23,8 @@ public interface PartidoDao {
 
 	Partido getPartidoByIdPartido(Long idPartido);
 
+	List<Partido> getListaDePartidosDelTorneoFinalizados(Torneo torneo);
+
 
 
 }
