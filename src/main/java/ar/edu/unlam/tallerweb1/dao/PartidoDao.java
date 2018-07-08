@@ -19,4 +19,10 @@ public interface PartidoDao {
 
 	List<Partido> getListaDePartidosDelTorneo(Torneo torneo);
 
+	List<Partido> getListaDePartidosDeLaFecha(Long idFecha);
+
+	Partido getPartidoByIdPartido(Long idPartido);
+
+
+
 }

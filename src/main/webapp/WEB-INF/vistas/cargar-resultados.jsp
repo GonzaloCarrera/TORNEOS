@@ -13,21 +13,30 @@
 		<div class="container fixHeader">
 		</div>
 		<div class = "container">
-		
-		
+
+				Cargar resultados
 				
+				<c:if test="${not empty error}">
+			        <h4><span>${error}</span></h4>
+			        <br>
+		        </c:if>	
 				
-		<form:form action="listado-fechas-torneo" method="POST">
-			<select class='form-control' id='idTorneo' name='idTorneo' required>
-				 <c:forEach items="${torneos}" var="entry">
-					<option path="idTorneo" value='${entry.id}'>${entry.nombreTorneo}</option>
+				<c:if test="${empty error }">
+				<form:form action="cargar-resultados" method="POST">
+				<input type="number" name="golesEquipo1" id="golesEquipo1" placeholder="Goles equipo 1" min=0 max=99 required/> 
+			<select id='idPartido' name='idPartido' required>
+				 <c:forEach items="${partidos}" var="entry">
+					<option name="idPartido" value='${entry.id}'>${entry.equipo1.nombreEquipo} vs ${entry.equipo2.nombreEquipo}</option>
 	      		 </c:forEach>
       		 </select>
-      		 <button class="btn btn-success" Type="Submit"/>Buscar fechas pertenecientes al torneo</button>
+      		 <input type="number" name="golesEquipo2" id="golesEquipo2" placeholder="Goles equipo 2" min=0 max=99 required/> 
+      		 <button class="btn btn-success" Type="Submit"/>Cargar resultado</button>
       	</form:form>
+      	</c:if>
+
+
       		 
  
-
 		</div>
 		<!-- Placed at the end of the document so the pages load faster -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" ></script>

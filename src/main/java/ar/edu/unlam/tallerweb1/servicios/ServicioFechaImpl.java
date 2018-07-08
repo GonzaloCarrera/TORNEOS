@@ -168,4 +168,11 @@ public class ServicioFechaImpl implements ServicioFecha{
 	public Integer getCantidadDeFechasDeUnTorneo(Torneo torneo) {
 		return fechaDao.getCantidadDeFechasDeUnTorneo(torneo);
 	}
+
+	@Override
+	public Fecha getFechaByIdFecha(Long idFecha) {
+		return fechaDao.getFechaByIdFecha(idFecha);
+	}
+	
+	
 }

@@ -14,36 +14,39 @@
 		</div>
 		<div class = "container">
 		
-	
+		
+		
 			<div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-				<form:form action="registrar-usuario" method="POST" modelAttribute="usuario">
-			    	<h3 class="form-signin-heading">Registrar usuario</h3>
-					<hr class="colorgraph"><br>
-					
-					
-					  <div class="form-group row">
-    <label for="inputEmail3" class="col-sm-2 col-form-label">Nombre</label>
-    <div class="col-sm-10">
-      <form:input path="username" id="username" type="text" class="form-control" placeholder="Username" />
-    </div>
-  </div>
-  <div class="form-group row">
-    <label for="inputPassword3" class="col-sm-2 col-form-label">Email</label>
-    <div class="col-sm-10">
-      <form:input path="email" type="email" id="email" class="form-control"  placeholder="Email"/>    
-    </div>
-  </div>
-  <div class="form-group row">
-    <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
-    <div class="col-sm-10">
-      <form:input path="password" type="password" id="password" class="form-control" placeholder="Password"/>   
-    </div>
-  </div>		
-					
-					<button class="btn btn-success" Type="Submit"/>Registrarse</button>
-				</form:form>
+				<form:form action="iniciar-fecha-torneo" method="POST">
+			    	<h3 class="form-signin-heading">Seleccione el rango horario de la fecha</h3>
+					<hr class="colorgraph"><br>		
 
-				<c:if test="${not empty error}">
+		
+	<div class="form-group row">
+    <label for="horaInicio" class="col-sm-2 col-form-label">Desde</label>
+    <div class="col-sm-10">
+      <input path="horaInicio" name="horaInicio" id="horaInicio" type="datetime-local" class="form-control" placeholder="hora inicio" required/>
+    </div>
+  </div>
+  
+  	<div class="form-group row">
+    <label for="horaFin" class="col-sm-2 col-form-label">Hasta</label>
+    <div class="col-sm-10">
+      <input path="horaFin" name="horaFin" id="horaFin" type="datetime-local" class="form-control" placeholder="hora fin" required/>
+    </div>
+  </div>
+
+      		 <input type="hidden" value="${idTorneo}" name="idTorneo" id="idTorneo"/> 
+
+ 	
+					
+					<button class="btn btn-lg btn-primary btn-block" Type="Submit"/>Registrar horario</button>
+				</form:form>
+				
+
+
+				<%--Bloque que es visible si el elemento error no está vacío	--%>
+				<c:if test="${not empty error}">	
 			        <h4><span>${error}</span></h4>
 			        <br>
 		        </c:if>	

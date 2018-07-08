@@ -40,7 +40,7 @@ public class ControladorLogin {
 
 		Usuario usuarioBuscado = servicioUsuario.consultarUsuario(usuario);
 		if (usuarioBuscado != null) {
-			request.getSession().setAttribute("usuario", usuarioBuscado);
+			request.getSession().setAttribute("user", usuarioBuscado);
 			return new ModelAndView("redirect:/home");
 		} else {
 			model.put("error", "Usuario o clave incorrecta");
@@ -55,7 +55,7 @@ public class ControladorLogin {
 
 	@RequestMapping(path = "/", method = RequestMethod.GET)
 	public ModelAndView inicio() {
-		return new ModelAndView("redirect:/login");
+		return new ModelAndView("redirect:/home");
 	}
 	
 	@RequestMapping("/registrar")
@@ -73,7 +73,7 @@ public class ControladorLogin {
 		Integer usuarioBuscado = servicioUsuario.consultarExistencia(usuario);
 		if (usuarioBuscado == 0) {
 			servicioUsuario.guardarUsuario(usuario);
-			request.getSession().setAttribute("usuario", usuario);
+			request.getSession().setAttribute("user", usuario);
 			return new ModelAndView("redirect:/home");
 		} else {
 			model.put("error", "El usuario ya existe");
@@ -83,7 +83,7 @@ public class ControladorLogin {
 	
 	@RequestMapping("/logout")
 	public ModelAndView logout(HttpServletRequest request) {
-		request.getSession().removeAttribute("usuario");
+		request.getSession().removeAttribute("user");
 		return new ModelAndView("redirect:/home");
 	}
 }

@@ -9,22 +9,13 @@
 	    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
 	</head>
 	<body>
+	<%@include file="header.jsp" %>
+		<div class="container fixHeader">
+		</div>
 		<div class = "container">
 		
 		
-				<ul class='nav navbar-nav navbar-right'>
-					<c:set var="usuario" value="${usuario}" scope="session" />
-					<c:if test="${empty usuario.username}">
-						<li><a href='registrar'><span class='glyphicon glyphicon-user'></span>&nbsp;Registrarse</a></li>
-						<li><a href='login'><span class='glyphicon glyphicon-log-in'></span>&nbsp;Login</a></li>
-					</c:if>
-					<c:if test="${not empty usuario.username}">
-						<li style="color: #9d9d9d; padding-top: 1em;">
-								Bienvenido, ${usuario.username}.
-						</li>
-						<li><a href='logout'><span class='glyphicon glyphicon-log-out'></span>&nbsp;Logout</a></li>
-					</c:if>
-				</ul>
+		
 			<div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
 				<form:form action="seleccionar-horario-partido" method="POST">
 			    	<h3 class="form-signin-heading">Seleccionar rango horario para el partido de tu equipo 
@@ -36,14 +27,14 @@
 	<div class="form-group row">
     <label for="horaInicio" class="col-sm-2 col-form-label">Desde</label>
     <div class="col-sm-10">
-      <input path="horaInicio" name="horaInicio" id="horaInicio" type="datetime-local" class="form-control" placeholder="hora inicio" />
+      <input path="horaInicio" name="horaInicio" id="horaInicio" type="datetime-local" class="form-control" placeholder="hora inicio" required/>
     </div>
   </div>
   
   	<div class="form-group row">
     <label for="horaFin" class="col-sm-2 col-form-label">Hasta</label>
     <div class="col-sm-10">
-      <input path="horaFin" name="horaFin" id="horaFin" type="datetime-local" class="form-control" placeholder="hora fin" />
+      <input path="horaFin" name="horaFin" id="horaFin" type="datetime-local" class="form-control" placeholder="hora fin" required />
     </div>
   </div>
 

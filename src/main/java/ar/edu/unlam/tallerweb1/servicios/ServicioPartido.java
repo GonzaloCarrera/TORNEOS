@@ -17,4 +17,8 @@ public interface ServicioPartido {
 	List<Partido> getListaDePartidosDeLaFechaYTorneo(Fecha fecha, Torneo torneo);
 	
 	List<Partido> getListaDePartidosDelTorneo(Torneo torneo);
+	
+	List<Partido> getListaDePartidosDeLaFecha(Long idFecha);
+	
+	Partido getPartidoByIdPartido(Long idPartido);
 }
