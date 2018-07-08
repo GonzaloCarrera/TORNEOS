@@ -33,7 +33,8 @@
 						<td>${entry.nombreTorneo}</td>
 						<td>${entry.descripcionTorneo}</td>
 						<td>${entry.estado}</td>
-						<td><button type="button" class="btn btn-info">Ver estadisticas (falta la funcionalidad)</button></td>
+						<td><a href='estadisticas?idTorneo=<c:out value="${entry.id}" />' class="btn btn-primary" role="button">
+      		 Ver Tabla de Posiciones</a></td>
 						    </tr>
   </tbody>
 	      		 </c:forEach>

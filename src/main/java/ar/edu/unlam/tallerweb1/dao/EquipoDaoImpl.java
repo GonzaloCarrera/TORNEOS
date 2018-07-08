@@ -51,7 +51,9 @@ public class EquipoDaoImpl extends AbstractDao implements EquipoDao{
 		List<Equipo> equiposDelUsuario= new ArrayList<Equipo>();
 		for(Equipo e : equipos){
 			if(e.getUsuario().getId()==idUsuario){
+				if(!equiposDelUsuario.contains(e)){
 					equiposDelUsuario.add(e);
+				}
 			}
 		}
 		return equiposDelUsuario;

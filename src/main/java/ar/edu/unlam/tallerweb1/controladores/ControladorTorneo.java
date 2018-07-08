@@ -1,6 +1,8 @@
 package ar.edu.unlam.tallerweb1.controladores;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -15,9 +17,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import ar.edu.unlam.tallerweb1.modelo.Equipo;
+import ar.edu.unlam.tallerweb1.modelo.Estadistica;
 import ar.edu.unlam.tallerweb1.modelo.Torneo;
 import ar.edu.unlam.tallerweb1.servicios.ServicioEquipo;
 import ar.edu.unlam.tallerweb1.servicios.ServicioFecha;
+import ar.edu.unlam.tallerweb1.servicios.ServicioPartido;
 import ar.edu.unlam.tallerweb1.servicios.ServicioTorneo;
 import ar.edu.unlam.tallerweb1.servicios.ServicioUsuario;
 
@@ -32,6 +36,9 @@ public class ControladorTorneo {
 	
 	@Inject
 	private ServicioFecha servicioFecha;
+	
+	@Inject
+	private ServicioPartido servicioPartido;
 	
 	@RequestMapping("/registrar-torneo")
 	public ModelAndView registrarTorneo() {
@@ -103,11 +110,25 @@ public class ControladorTorneo {
 		List<Equipo> equipos = servicioEquipo.getListaDeEquiposByIdUsuario(idUsuario);
 		for(Equipo e : equipos){
 			for(Torneo t : e.getTorneos()){
+				if(!torneos.contains(t)){
 				torneos.add(t);
+				}
 			}
 		}
 		modelo.put("torneos", torneos);
 		return new ModelAndView("mis-torneos", modelo);
+	}
+	
+	@RequestMapping("/estadisticas")
+	public ModelAndView estadisticas(@RequestParam("idTorneo") Long idTorneo) {
+		
+		ModelMap modelo = new ModelMap();
+		Torneo torneo = servicioTorneo.getTorneoById(idTorneo);
+		List<Estadistica> rank = servicioPartido.getTablaDePosicionesByTorneo(torneo);
+		Collections.sort(rank);
+		modelo.put("rank", rank);
+		modelo.put("torneo", torneo);
+		return new ModelAndView("estadisticas", modelo);
 	}
 
 
