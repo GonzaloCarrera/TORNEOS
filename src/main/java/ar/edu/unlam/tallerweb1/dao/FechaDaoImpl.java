@@ -37,6 +37,14 @@ public class FechaDaoImpl extends AbstractDao implements FechaDao {
 	
 	@Override
 	@SuppressWarnings("unchecked")
+	public Fecha getFechaByIdFecha(Long idFecha){
+		return (Fecha) getSession().createCriteria(Fecha.class)
+			.add(Restrictions.eq("id", idFecha))
+			.uniqueResult();
+	}
+	
+	@Override
+	@SuppressWarnings("unchecked")
 	public List<Fecha> getFechasDeUnTorneoByIdTorneo(Long idTorneo){
 		return getSession().createCriteria(Fecha.class)
 			.createAlias("torneo", "t")

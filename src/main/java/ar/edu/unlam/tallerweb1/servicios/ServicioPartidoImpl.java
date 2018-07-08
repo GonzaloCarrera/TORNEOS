@@ -43,4 +43,15 @@ public class ServicioPartidoImpl implements ServicioPartido {
 	public List<Partido> getListaDePartidosDelTorneo(Torneo torneo) {
 		return partidoDao.getListaDePartidosDelTorneo(torneo);
 	}
+
+	@Override
+	public List<Partido> getListaDePartidosDeLaFecha(Long idFecha) {
+		return partidoDao.getListaDePartidosDeLaFecha(idFecha);
+	}
+
+	@Override
+	public Partido getPartidoByIdPartido(Long idPartido) {
+		return partidoDao.getPartidoByIdPartido(idPartido);
+	}
+
 }

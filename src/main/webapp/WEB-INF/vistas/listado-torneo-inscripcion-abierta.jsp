@@ -9,33 +9,36 @@
 	    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
 	</head>
 	<body>
-		<div class = "container">
-		
-		
-				<ul class='nav navbar-nav navbar-right'>
-					<c:set var="usuario" value="${usuario}" scope="session" />
-					<c:if test="${empty usuario.username}">
-						<li><a href='registrar'><span class='glyphicon glyphicon-user'></span>&nbsp;Registrarse</a></li>
-						<li><a href='login'><span class='glyphicon glyphicon-log-in'></span>&nbsp;Login</a></li>
-					</c:if>
-					<c:if test="${not empty usuario.username}">
-						<li style="color: #9d9d9d; padding-top: 1em;">
-								Bienvenido, ${usuario.username}.
-						</li>
-						<li><a href='logout'><span class='glyphicon glyphicon-log-out'></span>&nbsp;Logout</a></li>
-					</c:if>
-				</ul>
-				
-		<form:form action="seleccionar-equipo-torneo" method="GET">
-			<select class='form-control' id='idTorneo' name='idTorneo' required>
+	<%@include file="header.jsp" %>
+		<div class="container fixHeader">
+		</div>
+		<div class = "container">				
+
+	<table class="table table-sm">
+  <thead>
+    <tr>
+      <th scope="col">Nombre del Torneo</th>
+      <th scope="col">Descripción</th>
+      <th scope="col">Cantidad de Equipos</th>
+    </tr>
+  </thead>
+
 				 <c:forEach items="${torneos}" var="entry">
-					<option name="idTorneo" value='${entry.id}'>${entry.nombreTorneo}</option>
+				  <tbody>
+    <tr>
+						<td>${entry.nombreTorneo}</td>
+						<td>${entry.descripcionTorneo}</td>
+						<td>${entry.cantidadDeEquipos}</td>
+						<td><a href='seleccionar-equipo-torneo?idTorneo=<c:out value="${entry.id}" />&idUsuario=<c:out value="${user.id}" />' class="btn btn-primary" role="button">
+      		 Registrarse</a></td>
+						    </tr>
+  </tbody>
 	      		 </c:forEach>
-      		 </select>
-      		 <input type="hidden" value="${usuario.id}" name="idUsuario" id="idUsuario"/>    
-      		 <button class="btn btn-success" Type="Submit"/>Registrar equipo en torneo</button>
-      	</form:form>
-      		 
+
+</table>
+
+
+
 		</div>
 		<!-- Placed at the end of the document so the pages load faster -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" ></script>
