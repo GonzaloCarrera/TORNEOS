@@ -7,6 +7,9 @@
 	    <link href="css/bootstrap.min.css" rel="stylesheet" >
 	    <!-- Bootstrap theme -->
 	    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+
+
+	    
 	</head>
 	<body>
 	<%@include file="header.jsp" %>
@@ -18,30 +21,28 @@
 				<table class="table table-sm">
   <thead>
     <tr>
-      <th scope="col">id</th>
       <th scope="col">Nombre del Torneo</th>
       <th scope="col">Descripcion</th>
+      <th scope="col">Equipos Inscriptos</th>
       <th scope="col">Estado</th>
       <th scope="col">Estadisticas</th>
     </tr>
   </thead>
   
-				 <c:forEach items="${torneos}" var="entry">
+				 <c:forEach items="${torneos}" var="entry" varStatus="loop">
 				  <tbody>
     <tr>
-						<td>${entry.id}</td>
 						<td>${entry.nombreTorneo}</td>
 						<td>${entry.descripcionTorneo}</td>
+						<td>${equiposIncriptos[loop.index]}/${entry.cantidadDeEquipos}</td>
 						<td>${entry.estado}</td>
-						<td><a href='estadisticas?idTorneo=<c:out value="${entry.id}" />' class="btn btn-primary" role="button">
+						<td><a href='estadisticas?idTorneo=<c:out value="${entry.id}" />' class="btn btn-success" role="button">
       		 Ver Tabla de Posiciones</a></td>
 						    </tr>
   </tbody>
 	      		 </c:forEach>
 
 </table>
-
-      		 
  
 		</div>
 		<!-- Placed at the end of the document so the pages load faster -->

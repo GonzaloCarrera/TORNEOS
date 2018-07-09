@@ -20,22 +20,24 @@
 				<table class="table table-sm">
   <thead>
     <tr>
-      <th scope="col">id</th>
+       <th scope="col">Fecha</th>
       <th scope="col">Horario</th>
-      <th scope="col">Equipos</th>
-	  <th scope="col">Fecha</th>
+      <th scope="col">Partido</th>
 	  <th scope="col">Torneo</th>
+	  <th scope="col">Descripcion</th>
+	  <th scope="col">Cupo de Equipos</th>
     </tr>
   </thead>
-
-				 <c:forEach items="${partidos}" var="entry">
+				<h2 style="text-align:center">Proximos partidos</h2>
+				 <c:forEach items="${partidos}" var="entry" varStatus="loop">
 				  <tbody>
     <tr>
-						<td>${entry.id}</td>
+						<td>${fechaNumero[loop.index]}</td>
 						<td>${entry.horario}</td>
 						<td>${entry.equipo1.nombreEquipo} vs ${entry.equipo2.nombreEquipo}</td>
-						<td>${entry.fecha.id}</td>
 						<td>${entry.fecha.torneo.nombreTorneo}</td>
+						<td>${entry.fecha.torneo.descripcionTorneo}</td>
+						<td>${entry.fecha.torneo.cantidadDeEquipos}</td>
 						    </tr>
   </tbody>
 	      		 </c:forEach>

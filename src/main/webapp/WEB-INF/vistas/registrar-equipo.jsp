@@ -22,7 +22,7 @@
 					<hr class="colorgraph"><br>		
 					
 	<div class="form-group row">
-    <label for="inputEmail3" class="col-sm-2 col-form-label">Nombre del Equipo</label>
+    <label for="inputEmail3" class="col-sm-2 col-form-label">Nombre</label>
     <div class="col-sm-10">
       <input id="nombreEquipo" name="nombreEquipo" type="text" class="form-control" placeholder="Nombre del equipo" required/>
     </div>
@@ -31,7 +31,7 @@
       <input type="hidden" name="idUsuario" value="${user.id}" id="usuario"/>    	
 			  		
 			  		<div class="form-group row">
-    <label for="inputEmail3" class="col-sm-2 col-form-label">1° Jugador</label>
+    <label for="inputEmail3" class="col-sm-2 col-form-label">1°Jugador</label>
     <div class="col-sm-10">
       <input id="nombreJugador1" name="nombreJugador1" type="text" class="form-control" placeholder="Nombre del jugador" required/>
     </div>
@@ -39,28 +39,28 @@
 			
 			
 		<div class="form-group row">
-    <label for="inputEmail3" class="col-sm-2 col-form-label">2° Jugador</label>
+    <label for="inputEmail3" class="col-sm-2 col-form-label">2°Jugador</label>
     <div class="col-sm-10">
       <input id="nombreJugador2" name="nombreJugador2" type="text" class="form-control" placeholder="Nombre del jugador" required/>
     </div>
   </div>	
   
   		<div class="form-group row">
-    <label for="inputEmail3" class="col-sm-2 col-form-label">3° Jugador</label>
+    <label for="inputEmail3" class="col-sm-2 col-form-label">3°Jugador</label>
     <div class="col-sm-10">
       <input id="nombreJugador3" name="nombreJugador3" type="text" class="form-control" placeholder="Nombre del jugador" required/>
     </div>
   </div>
   
   		<div class="form-group row">
-    <label for="inputEmail3" class="col-sm-2 col-form-label">4° Jugador</label>
+    <label for="inputEmail3" class="col-sm-2 col-form-label">4°Jugador</label>
     <div class="col-sm-10">
       <input id="nombreJugador4" name="nombreJugador4" type="text" class="form-control" placeholder="Nombre del jugador" required/>
     </div>
   </div>
   
   		<div class="form-group row">
-    <label for="inputEmail3" class="col-sm-2 col-form-label">5° Jugador</label>
+    <label for="inputEmail3" class="col-sm-2 col-form-label">5°Jugador</label>
     <div class="col-sm-10">
       <input id="nombreJugador5" name="nombreJugador5" type="text" class="form-control" placeholder="Nombre del jugador" required/>
     </div>
@@ -68,41 +68,41 @@
 
   
   		<div class="form-group row">
-    <label for="inputEmail3" class="col-sm-2 col-form-label">6° Jugador</label>
+    <label for="inputEmail3" class="col-sm-2 col-form-label">6°Jugador</label>
     <div class="col-sm-10">
       <input id="nombreJugador6" name="nombreJugador6" type="text" class="form-control" placeholder="Nombre del jugador" required/>
     </div>
   </div>
   
   		<div class="form-group row">
-    <label for="inputEmail3" class="col-sm-2 col-form-label">7° Jugador</label>
+    <label for="inputEmail3" class="col-sm-2 col-form-label">7°Jugador</label>
     <div class="col-sm-10">
       <input id="nombreJugador7" name="nombreJugador7" type="text" class="form-control" placeholder="Nombre del jugador" required/>
     </div>
   </div>
   
   		<div class="form-group row">
-    <label for="inputEmail3" class="col-sm-2 col-form-label">8° Jugador</label>
+    <label for="inputEmail3" class="col-sm-2 col-form-label">8°Jugador</label>
     <div class="col-sm-10">
       <input id="nombreJugador8" name="nombreJugador8" type="text" class="form-control" placeholder="Nombre del jugador" required/>
     </div>
   </div>
   
   		<div class="form-group row">
-    <label for="inputEmail3" class="col-sm-2 col-form-label">9° Jugador</label>
+    <label for="inputEmail3" class="col-sm-2 col-form-label">9°Jugador</label>
     <div class="col-sm-10">
       <input id="nombreJugador9" name="nombreJugador9" type="text" class="form-control" placeholder="Nombre del jugador" required />
     </div>
   </div>
   
   		<div class="form-group row">
-    <label for="inputEmail3" class="col-sm-2 col-form-label">10° Jugador</label>
+    <label for="inputEmail3" class="col-sm-2 col-form-label">10°Jugador</label>
     <div class="col-sm-10">
       <input id="nombreJugador10" name="nombreJugador10" type="text" class="form-control" placeholder="Nombre del jugador" required />
     </div>
   </div>	
 					
-					<button class="btn btn-lg btn-primary btn-block" Type="Submit"/>Registrar Equipo</button>
+					<button class="btn btn-lg btn-success btn-block" Type="Submit"/>Registrar Equipo</button>
 				</form:form>
 				
 

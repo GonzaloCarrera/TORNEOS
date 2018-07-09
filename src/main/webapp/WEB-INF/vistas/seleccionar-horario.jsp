@@ -15,27 +15,30 @@
 		<div class = "container">
 		
 	
-				
+				<h2 style="text-align:center">Asigná horario a tus próximos partidos</h2>
 				<table class="table table-sm">
   <thead>
     <tr>
-      <th scope="col">id</th>
-      <th scope="col">Equipo</th>
       <th scope="col">Fecha</th>
+      <th scope="col">Equipo</th>
       <th scope="col">Torneo</th>
+      <th scope="col">Descripcion</th>
+      <th scope="col">Cupo de Equipos</th>
+      <th scope="col">Opciones</th>
     </tr>
   </thead>
 
-				 <c:forEach items="${horarios}" var="entry">
+				 <c:forEach items="${horarios}" var="entry" varStatus="loop">
 				  <tbody>
     <tr>
-						<td>${entry.id}</td>
-						<td>${entry.equipo.nombreEquipo}</td>
-						<td>${entry.fecha.id}</td>
+   					    <td>${fechaNumero[loop.index]}</td>
+						<td>${entry.equipo.nombreEquipo}</td>					
 						<td>${entry.fecha.torneo.nombreTorneo}</td>
+						<td>${entry.fecha.torneo.descripcionTorneo}</td>
+						<td>${entry.fecha.torneo.cantidadDeEquipos}</td>
 						<td><a
 									href='seleccionar-horario-partido?idHorario=<c:out value="${entry.id}" />'
-									class="btn btn-primary" role="button"> Seleccionar Horario
+									class="btn btn-success" role="button"> Seleccionar Horario
 								</a></td>
 						    </tr>
   </tbody>

@@ -37,7 +37,6 @@ public class ControladorLogin {
 	@RequestMapping(path = "/validar-login", method = RequestMethod.POST)
 	public ModelAndView validarLogin(@ModelAttribute("usuario") Usuario usuario, HttpServletRequest request) {
 		ModelMap model = new ModelMap();
-
 		Usuario usuarioBuscado = servicioUsuario.consultarUsuario(usuario);
 		if (usuarioBuscado != null) {
 			request.getSession().setAttribute("user", usuarioBuscado);
@@ -86,4 +85,5 @@ public class ControladorLogin {
 		request.getSession().removeAttribute("user");
 		return new ModelAndView("redirect:/home");
 	}
+	
 }
