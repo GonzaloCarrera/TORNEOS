@@ -7,6 +7,21 @@
 	    <link href="css/bootstrap.min.css" rel="stylesheet" >
 	    <!-- Bootstrap theme -->
 	    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+	    <script>
+	    function validacion() {
+	    	document.getElementById("hayError").innerHTML = ""
+	    	  if (document.getElementById("horaFin").value<document.getElementById("horaInicio").value) {
+	    	    document.getElementById("hayError").innerHTML = "La hora de fin no puede ser menor a la hora de inicio.";
+	    	    return false;
+	    	  }
+	    	  return true;
+	    	}
+	    </script>
+		<style>
+			div.alert:empty {
+		 	  display: none;
+			}
+		</style>
 	</head>
 	<body>
 	<%@include file="header.jsp" %>
@@ -14,27 +29,25 @@
 		</div>
 		<div class = "container">
 		
-		
+
+		<div id="hayError" class="alert alert-danger"></div>
 		
 			<div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-				<form:form action="seleccionar-horario-partido" method="POST">
-			    	<h3 class="form-signin-heading">Seleccionar rango horario para el partido de tu equipo 
-			    	${horario.equipo.nombreEquipo} perteneciente a la fecha ${horario.fecha.id} 
-			    	perteneciente al torneo ${horario.fecha.torneo.nombreTorneo}</h3>
-					<hr class="colorgraph"><br>		
+				<form:form action="seleccionar-horario-partido" method="POST" onsubmit="return validacion()">
+			    	<h3 class="form-signin-heading">Seleccionar rango horario para el partido</h3>
+					<hr class="colorgraph">	
 
-		
 	<div class="form-group row">
     <label for="horaInicio" class="col-sm-2 col-form-label">Desde</label>
     <div class="col-sm-10">
-      <input path="horaInicio" name="horaInicio" id="horaInicio" type="datetime-local" class="form-control" placeholder="hora inicio" required/>
+      <input path="horaInicio" name="horaInicio" id="horaInicio" type="datetime-local" class="form-control" placeholder="hora inicio" min="${horaInicio}" max="${horaFin}" required/>
     </div>
   </div>
   
   	<div class="form-group row">
     <label for="horaFin" class="col-sm-2 col-form-label">Hasta</label>
     <div class="col-sm-10">
-      <input path="horaFin" name="horaFin" id="horaFin" type="datetime-local" class="form-control" placeholder="hora fin" required />
+      <input path="horaFin" name="horaFin" id="horaFin" type="datetime-local" class="form-control" placeholder="hora fin" min="horaInicio" min="${horaInicio}" max="${horaFin}" required />
     </div>
   </div>
 
@@ -42,7 +55,7 @@
 
  	
 					
-					<button class="btn btn-lg btn-primary btn-block" Type="Submit"/>Registrar horario</button>
+					<button class="btn btn-lg btn-primary btn-block" Type="Submit" />Registrar horario</button>
 				</form:form>
 				
 

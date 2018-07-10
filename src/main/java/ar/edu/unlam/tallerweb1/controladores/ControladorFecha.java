@@ -2,6 +2,7 @@ package ar.edu.unlam.tallerweb1.controladores;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -113,7 +114,12 @@ public class ControladorFecha {
 
 		ModelMap modelo = new ModelMap();
 		List<Fecha> fechas = servicioFecha.getListaDeFechasEnCurso();
+		List<Integer> fechaNumero = new ArrayList<Integer>();
+		for(Fecha f : fechas){
+			fechaNumero.add(servicioFecha.getCantidadDeFechasDeUnTorneo(f.getTorneo()));
+		}
 		modelo.put("fechas", fechas);
+		modelo.put("fechaNumero", fechaNumero);
 		return new ModelAndView("fechas-en-curso", modelo);
 	}
 	
@@ -122,7 +128,15 @@ public class ControladorFecha {
 
 		ModelMap modelo = new ModelMap();
 		List<Fecha> fechas = servicioFecha.getListaDeFechasEnPreparacion();
+		List<Integer> fechaNumero = new ArrayList<Integer>();
+		List<Integer> cantidadDeEquiposQueSeleccionaronHorario = new ArrayList<Integer>();
+		for(Fecha f : fechas){
+			fechaNumero.add(servicioFecha.getCantidadDeFechasDeUnTorneo(f.getTorneo()));
+			cantidadDeEquiposQueSeleccionaronHorario.add(servicioHorario.getCantidadDeEquiposQueSeleccionaronHorarioByIdFecha(f.getId()));
+		}
 		modelo.put("fechas", fechas);
+		modelo.put("fechaNumero", fechaNumero);
+		modelo.put("cantidadDeEquiposQueSeleccionaronHorario", cantidadDeEquiposQueSeleccionaronHorario);
 		return new ModelAndView("fechas-en-preparacion", modelo);
 	}
 	

@@ -67,10 +67,19 @@ public class ControladorTorneo {
 	}
 	
 	@RequestMapping("/listado-torneo-inscripcion-abierta")
-	public ModelAndView listadoTorneosInscripcionAbierta() {
+	public ModelAndView listadoTorneosInscripcionAbierta(@RequestParam("idUsuario") Long idUsuario) {
 		
 		ModelMap modelo = new ModelMap();
-		modelo.put("torneos", servicioTorneo.getTorneosConInscripcionAbierta());
+		List<Integer> equiposIncriptos = new ArrayList<Integer>();
+		List<Torneo> torneos = servicioTorneo.getTorneosConInscripcionAbierta();
+		List<Integer> validarCantidadDeEquiposRegistradosEnElTorneo = new ArrayList<Integer>();
+		for(Torneo t : torneos){
+			equiposIncriptos.add(servicioEquipo.getListaDeEquiposByIdTorneo(t.getId()).size());
+			validarCantidadDeEquiposRegistradosEnElTorneo.add(servicioEquipo.getCantidadDeEquiposRegistradorEnElTorneoPorElUsuario(t.getId(), idUsuario));
+		}
+		modelo.put("torneos", torneos);
+		modelo.put("validarCantidadDeEquiposRegistradosEnElTorneo",validarCantidadDeEquiposRegistradosEnElTorneo);
+		modelo.put("equiposIncriptos", equiposIncriptos);
 		return new ModelAndView("listado-torneo-inscripcion-abierta", modelo);
 	}
 	
@@ -108,14 +117,17 @@ public class ControladorTorneo {
 		ModelMap modelo = new ModelMap();
 		List<Torneo> torneos = new ArrayList<Torneo>();
 		List<Equipo> equipos = servicioEquipo.getListaDeEquiposByIdUsuario(idUsuario);
+		List<Integer> equiposIncriptos = new ArrayList<Integer>();
 		for(Equipo e : equipos){
 			for(Torneo t : e.getTorneos()){
 				if(!torneos.contains(t)){
 				torneos.add(t);
+				equiposIncriptos.add(servicioEquipo.getListaDeEquiposByIdTorneo(t.getId()).size());
 				}
 			}
 		}
 		modelo.put("torneos", torneos);
+		modelo.put("equiposIncriptos", equiposIncriptos);
 		return new ModelAndView("mis-torneos", modelo);
 	}
 	

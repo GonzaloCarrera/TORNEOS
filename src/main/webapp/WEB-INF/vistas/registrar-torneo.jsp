@@ -17,7 +17,7 @@
 		
 			<div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
 				<form:form action="registrar-torneo" method="POST" modelAttribute="torneo">
-			    	<h3 class="form-signin-heading">Registrar torneo</h3>
+			    	<h2 style="text-align:center">Registrar torneo</h2>
 					<hr class="colorgraph"><br>		
 					
 	<div class="form-group row">
@@ -39,7 +39,7 @@
     </div>
   </div>		
 					
-					<button class="btn btn-lg btn-primary btn-block" Type="Submit"/>Registrarse</button>
+					<button class="btn btn-lg btn-success btn-block" Type="Submit"/>Registrar torneo</button>
 				</form:form>
 
 				<%--Bloque que es visible si el elemento error no está vacío	--%>

@@ -58,5 +58,6 @@ public class EquipoDaoImpl extends AbstractDao implements EquipoDao{
 		}
 		return equiposDelUsuario;
 	}
+
 	
 }

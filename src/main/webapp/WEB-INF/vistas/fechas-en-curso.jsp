@@ -16,27 +16,28 @@
 		
 		
 				
-				
+				<h2 style="text-align:center">Fechas en curso</h2>
 				<table class="table table-sm">
   <thead>
     <tr>
-      <th scope="col">id</th>
       <th scope="col">Fecha</th>
       <th scope="col">Torneo</th>
+      <th scope="col">Descripcion del Torneo</th>
       <th scope="col">Cantidad de Equipos</th>
+      <th scope="col">Opciones</th>
     </tr>
   </thead>
 
-				 <c:forEach items="${fechas}" var="entry">
+				 <c:forEach items="${fechas}" var="entry" varStatus="loop">
 				  <tbody>
     <tr>
-						<td>${entry.id}</td>
-						<td>${entry.id}</td>
+						<td>${fechaNumero[loop.index]}</td>
 						<td>${entry.torneo.nombreTorneo}</td>
+						<td>${entry.torneo.descripcionTorneo}</td>
 						<td>${entry.torneo.cantidadDeEquipos}</td>
 						<td>
 <td><a href='cargar-resultados?idFecha=<c:out value="${entry.id}" />'
-									class="btn btn-primary" role="button"> Cargar resultados
+									class="btn btn-success" role="button"> Cargar resultados
 								</a></td>
 </td>
 						    </tr>

@@ -16,27 +16,28 @@
 		
 		
 				
-				
+				<h2 style="text-align:center">Fechas en preparación</h2>
 				<table class="table table-sm">
   <thead>
     <tr>
-      <th scope="col">id</th>
       <th scope="col">Fecha</th>
       <th scope="col">Torneo</th>
-      <th scope="col">Cantidad de Equipos</th>
+       <th scope="col">Descripción del Torneo</th>
+      <th scope="col">Seleccionaron Horario</th>
+      <th scope="col">Opciones</th>
     </tr>
   </thead>
 
-				 <c:forEach items="${fechas}" var="entry">
+				 <c:forEach items="${fechas}" var="entry" varStatus="loop">
 				  <tbody>
     <tr>
-						<td>${entry.id}</td>
-						<td>${entry.id}</td>
+						<td>${fechaNumero[loop.index]}</td>
 						<td>${entry.torneo.nombreTorneo}</td>
-						<td>${entry.torneo.cantidadDeEquipos}</td>
+						<td>${entry.torneo.descripcionTorneo}</td>
+						<td>${cantidadDeEquiposQueSeleccionaronHorario[loop.index]}/${entry.torneo.cantidadDeEquipos}</td>
 												<td><a
 									href='machear-fecha?idTorneo=<c:out value="${entry.torneo.id}" />'
-									class="btn btn-primary" role="button"> Machear
+									class="btn btn-success" role="button"> Machear
 								</a></td>
 						    </tr>
   </tbody>

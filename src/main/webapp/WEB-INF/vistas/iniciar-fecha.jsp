@@ -21,14 +21,16 @@
 			        <h4><span>${error}</span></h4>
 			        <br>
 		        </c:if>	
-      	 	
+		        
+      	 	<h2 style="text-align:center">Iniciar fecha de un torneo</h2>
       	 	<table class="table table-sm">
   <thead>
     <tr>
       <th scope="col">id</th>
       <th scope="col">Nombre del Torneo</th>
       <th scope="col">Descripcion</th>
-      <th scope="col">Cantidad de Equipos</th>
+      <th scope="col">Cupo de Equipos</th>
+      <th scope="col">Opciones</th>
     </tr>
   </thead>
 
@@ -41,7 +43,7 @@
 						<td>${entry.cantidadDeEquipos}</td>
 						<td><a
 									href='seleccionar-horario-fecha?idTorneo=<c:out value="${entry.id}" />'
-									class="btn btn-primary" role="button"> Iniciar fecha
+									class="btn btn-success" role="button"> Iniciar fecha
 								</a></td>
 						    </tr>
   </tbody>
