@@ -1,58 +1,67 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
-<html>
-	<head>
-		<!-- Bootstrap core CSS -->
-	    <link href="css/bootstrap.min.css" rel="stylesheet" >
-	    <!-- Bootstrap theme -->
-	    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
-	</head>
-	<body>
-	<%@include file="header.jsp" %>
-		<div class="container fixHeader">
-		</div>
-		<div class = "container">
-		
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="js/bootstrap.min.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:500' rel='stylesheet' type='text/css'>
+	<link href="css/Estilos.css" rel='stylesheet' type='text/css'>
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+	<link href='http://fonts.googleapis.com/css?family=Raleway:500' rel='stylesheet' type='text/css'>
+    <title>Fulbito</title>
+</head>
+<body>
 	
-			<div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-				<form:form action="registrar-usuario" method="POST" modelAttribute="usuario">
-			    	<h3 class="form-signin-heading">Registrar usuario</h3>
-					<hr class="colorgraph"><br>
-					
-					
-					  <div class="form-group row">
-    <label for="inputEmail3" class="col-sm-2 col-form-label">Nombre</label>
-    <div class="col-sm-10">
-      <form:input path="username" id="username" type="text" class="form-control" placeholder="Username" />
-    </div>
-  </div>
-  <div class="form-group row">
-    <label for="inputPassword3" class="col-sm-2 col-form-label">Email</label>
-    <div class="col-sm-10">
-      <form:input path="email" type="email" id="email" class="form-control"  placeholder="Email"/>    
-    </div>
-  </div>
-  <div class="form-group row">
-    <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
-    <div class="col-sm-10">
-      <form:input path="password" type="password" id="password" class="form-control" placeholder="Password"/>   
-    </div>
-  </div>		
-					
-					<button class="btn btn-success" Type="Submit"/>Registrarse</button>
-				</form:form>
-
-				<c:if test="${not empty error}">
-			        <h4><span>${error}</span></h4>
-			        <br>
-		        </c:if>	
-			</div>
+	<div class="container">
+            
+		<div class="middlePage" >
+		  <div class="page-header">
+		    <h1 class="logo">Fulbito</h1>
+		  </div>
+		      <div class="container">
+		          <div class="row centered-form">
+		          <div class="col-xs-12 col-sm-6 col-md-5">
+		            <div class="panel panel-default">
+		              <div class="panel-heading">
+		                <h3 class="panel-title">Registro de usuario <small>Fulbito</small></h3>
+		              </div>
+		              <div class="panel-body">
+		                <form:form action="registrar-usuario" method="POST" modelAttribute="usuario">
+		            
+		                    
+		                      <div class="form-group">
+		                        <form:input path="username" id="username" type="text" class="form-control input-sm" placeholder="Nombre de usuario" />
+		                      </div>
+		                    
+		       
+		                  <div class="form-group">
+		                    <form:input path="email" type="email" id="email" class="form-control input-sm" placeholder="Email" />
+		                  </div>
+		              
+		                    
+		                      <div class="form-group">
+		                        <form:input path="password" type="password" id="password" class="form-control input-sm" placeholder="Contraseña" />
+		                      </div>
+		                 
+		              
+		                  <a href="login.php" title="volver" class="btn btn-danger center btn-sm pull-left">Volver</a>
+		                      <button type="submit" name="guardar" class="btn btn-danger btn-sm pull-right">Guardar Usuario</button>
+		                </form:form>    
+		              </div>
+		            </div>
+		          </div>
+		        </div>
+		      </div>
 		</div>
-		
-		<!-- Placed at the end of the document so the pages load faster -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" ></script>
-		<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-		<script src="js/bootstrap.min.js" type="text/javascript"></script>
-	</body>
+	    
+	</div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    
+</body>
 </html>
