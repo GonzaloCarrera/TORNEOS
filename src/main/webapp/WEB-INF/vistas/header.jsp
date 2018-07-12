@@ -7,6 +7,13 @@
 		<head>
 			<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 			<link href="css/bootstrap.min.css" rel="stylesheet">
+		 <script src="js/jquery.min.js"></script>
+  		<script src="js/popper.min.js"></script>
+			  <script>
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip(); 
+});
+</script>
 		</head>
 
 		<body>
@@ -32,7 +39,7 @@
 									<a href='registrar-equipo' class="nav-link"> Registrar Equipo </a>
 								</li>
 								<li class="nav-item">
-									<a href='listado-torneo-inscripcion-abierta' class="nav-link"> Inscribirme a torneo </a>
+									<a href='listado-torneo-inscripcion-abierta?idUsuario=<c:out value="${user.id}" />' class="nav-link"> Inscribirme a torneo </a>
 								</li>
 								<li class="nav-item">
 									<a href='seleccionar-horario?idUsuario=<c:out value="${user.id}" />' class="nav-link">
@@ -58,9 +65,6 @@
 							<ul class="navbar-nav mr-auto" style="color:red;">
 								<li class="nav-item">
 									<a href='registrar-torneo' class="nav-link"> Registrar torneo </a>
-								</li>
-								<li class="nav-item">
-									<a href='torneos-en-curso' class="nav-link"> Torneos en curso </a>
 								</li>
 								<li class="nav-item">
 									<a href='iniciar-fecha' class="nav-link"> Iniciar fecha </a>

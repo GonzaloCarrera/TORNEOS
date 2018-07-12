@@ -76,7 +76,6 @@
             </div>
          </div>
       </section>
-
       <footer id="footer" class="footer">
 			<%@include file="footer.jsp" %> 
       </footer>

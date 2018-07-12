@@ -25,10 +25,9 @@
                     <div class="page-header">
                       <h1 class="logo">Fulbito <small>Bienvenido!</small></h1>
                     </div>
-
                       <div class="panel panel-info">
                   <div class="panel-heading">
-                    <h3 class="panel-title">Por favor iniciar sesión</h3>
+                    <h3 class="panel-title">Por favor iniciar sesiÃ³n</h3>
                   </div>
                   <div class="panel-body">
                   
@@ -39,7 +38,7 @@
                             <fieldset>
                               <form:input path="email" id="email" type="email" placeholder="Ingrese Email" class="form-control input-md"/>
                               <div class="spacing"><a href="#"></a></div>
-                              <form:input path="password" type="password" id="password" placeholder="Ingrese contraseña" class="form-control input-md"/>
+                              <form:input path="password" type="password" id="password" placeholder="Ingrese contraseÃ±a" class="form-control input-md"/>
                               <br>                            
                               
                               <a href="registrar" title="Registrarse" class="btn btn-danger center btn-sm pull-left">Registrarse</a>
@@ -56,7 +55,7 @@
                 </div>                
             </div>
             </div>
-            <p><a href="#">Unlam</a> · Grupo 1</p>
+            <p><a href="#">Unlam</a> Â· Grupo 1</p>
             </div>
 	    
 	</div>

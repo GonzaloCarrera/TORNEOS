@@ -41,14 +41,13 @@
          <div class="row">
             <div class="container">
                <div class="contact">
-
                   <div class="col-md-6 col-md-offset-3">
                      <div class="contact-us">
                         <form:form action="registrar-torneo" method="POST" modelAttribute="torneo" class="comments-form">
                            <ul>
                               <li><form:input path="nombreTorneo" id="nombreTorneo" type="text" class="required" placeholder="Nombre del torneo*"/></li>
                               <li><form:input path="descripcionTorneo" type="text" id="descripcionTorneo" class="required email" placeholder="Descripcion del torneo*"/></li>
-                              <li><form:input path="cantidadDeEquipos" type="number" id="cantidadDeEquipos" placeholder="Cupos máximos*" min="3" max="50" /></li>
+                              <li><form:input path="cantidadDeEquipos" type="number" id="cantidadDeEquipos" placeholder="Cupos mÃ¡ximos*" min="3" max="50" /></li>
                               <li><input class="thbg-color" type="submit" value="Registrar torneo"></li>
                            </ul>
                            <div class="hidden-me" id="contact_form_responce">

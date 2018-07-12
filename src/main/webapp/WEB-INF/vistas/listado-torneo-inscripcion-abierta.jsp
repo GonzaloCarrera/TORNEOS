@@ -52,7 +52,7 @@
 							  <thead>
 							    <tr>
 							      <th scope="col">Nombre del Torneo</th>
-							      <th scope="col">Descripción</th>
+							      <th scope="col">DescripciÃ³n</th>
 							      <th scope="col">Cantidad de Equipos</th>
 							    </tr>
 							  </thead>
