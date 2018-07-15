@@ -59,8 +59,7 @@ public class ServicioPartidoImpl implements ServicioPartido {
 	@Override
 	public List<Estadistica> getTablaDePosicionesByTorneo(Torneo torneo) {
 		List<Partido> partidos = this.getListaDePartidosDelTorneoFinalizados(torneo);
-		
-		Estadistica stats1 = new Estadistica();
+
 		List<Estadistica> rank = new ArrayList<Estadistica>();
 
 		for(Partido p : partidos){

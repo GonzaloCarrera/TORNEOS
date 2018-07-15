@@ -144,13 +144,20 @@ public class ControladorFecha {
 	public ModelAndView machearFecha(@RequestParam("idTorneo") Long idTorneo) {
 
 		ModelMap modelo = new ModelMap();
-		Boolean bool = servicioFecha.machearEquiposDelTorneoParaLaFechaEnPreparacion(idTorneo);
-		if(bool){
-			Fecha fecha = servicioFecha.getFechaEnPreparacionDeUnTorneo(servicioTorneo.getTorneoById(idTorneo));
-			fecha.setEstado("En curso");
-			servicioFecha.guardarFecha(fecha);
+		Boolean fechaMacheada;
+		try{
+			fechaMacheada = servicioFecha.machearEquiposDelTorneoParaLaFechaEnPreparacion(idTorneo);
+			if(fechaMacheada){
+				Fecha fecha = servicioFecha.getFechaEnPreparacionDeUnTorneo(servicioTorneo.getTorneoById(idTorneo));
+				fecha.setEstado("En curso");
+				servicioFecha.guardarFecha(fecha);
+			}
+			modelo.put("torneo", servicioTorneo.getTorneoById(idTorneo));
 		}
-		
+		catch(Exception e){
+			modelo.put("error", "Ocurrio un error al intentar machear la fecha.");
+		}
+				
 		return new ModelAndView("fecha-macheada", modelo);
 	}
 	
@@ -176,13 +183,18 @@ public class ControladorFecha {
 			partido.setGolesEquipo2(golesEquipo2);
 			partido.setFinalizado(true);
 			servicioPartido.guardarPartido(partido);
-			modelo.put("error", "Resultado cargado exitosamente.");
+			modelo.put("exito", "Resultado cargado exitosamente.");
+			List<Partido> partidos = servicioPartido.getListaDePartidosDeLaFecha(partido.getFecha().getId());
+			modelo.put("partidos", partidos);
+			if(servicioPartido.getListaDePartidosDeLaFecha(partido.getFecha().getId()).size()==0){
+				partido.getFecha().setEstado("Finalizada");
+				servicioFecha.guardarFecha(partido.getFecha());
+			}
 		}
 		catch(Exception e){
 			e.printStackTrace();
 			modelo.put("error", "Ocurrio un error.");
 		}
-		
 		return new ModelAndView("cargar-resultados", modelo);
 	}
 }
