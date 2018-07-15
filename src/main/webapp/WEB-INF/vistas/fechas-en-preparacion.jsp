@@ -33,7 +33,7 @@
                <h3>Fechas en preparacion</h3>
                <ul class="breadcrumb">
                   <li><a href="home">Home</a></li>
-                  <li class="active">Fechas en preparación</li>
+                  <li class="active">Fechas en preparaciï¿½n</li>
                </ul>
             </div>
       </div>
@@ -52,7 +52,7 @@
 							    <tr>
 							      <th scope="col">Fecha</th>
 							      <th scope="col">Torneo</th>
-							      <th scope="col">Descripción del Torneo</th>
+							      <th scope="col">Descripciï¿½n del Torneo</th>
 							      <th scope="col">Seleccionaron Horario</th>
 							      <th scope="col">Opciones</th>
 							    </tr>

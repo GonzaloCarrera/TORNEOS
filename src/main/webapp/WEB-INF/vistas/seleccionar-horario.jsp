@@ -46,7 +46,7 @@
 			        <br>
 		        	</c:if>	
                      <div class="contact-us">
-                        <h2 stye="text-align:center">Asigna horario a tus próximos partidos</h2>					      	
+                        <h2 stye="text-align:center">Asigna horario a tus prï¿½ximos partidos</h2>					      	
 							<table class="table table-sm">
 							  <thead>
 							    <tr>

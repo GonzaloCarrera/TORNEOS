@@ -27,7 +27,7 @@
                     </div>
                       <div class="panel panel-primary">
                   <div class="panel-heading">
-                    <h3 class="panel-title">Iniciar sesión</h3>
+                    <h3 class="panel-title">Iniciar sesiï¿½n</h3>
                   </div>
                   <div class="panel-body">
                   
@@ -36,7 +36,7 @@
                             <fieldset>
                               <form:input path="email" id="email" type="email" placeholder="Ingrese Email" class="form-control input-md" required="true"/>
                               <div class="spacing"><a href="#"></a></div>
-                              <form:input path="password" type="password" id="password" placeholder="Ingrese Contraseña" class="form-control input-md" required="true"/>
+                              <form:input path="password" type="password" id="password" placeholder="Ingrese Contraseï¿½a" class="form-control input-md" required="true"/>
                               <br>                            
                               
                               <a href="registrar" style="margin-left:1%;width:48%;" title="Registrarse" class="btn btn-lg btn-primary">Registrarse</a>

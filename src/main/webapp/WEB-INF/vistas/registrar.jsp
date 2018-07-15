@@ -44,7 +44,7 @@
 		              
 		                    
 		                      <div class="form-group">
-		                        <form:input path="password" type="password" id="password" class="form-control input-sm" placeholder="Contraseña" required="true"/>
+		                        <form:input path="password" type="password" id="password" class="form-control input-sm" placeholder="ContraseÃ±a" required="true"/>
 		                      </div>
 		                 
 		              

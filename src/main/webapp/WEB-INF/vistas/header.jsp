@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
 		<section id="top">
          <header>
             <div class="container">
@@ -46,7 +45,6 @@
                      </div>
                   </div>
                </div>
-
                   <div class="row">
                      <div class="col-md-12">
                         <div class="full">
@@ -102,7 +100,6 @@
                            </div>
                         </div>
                      </div>
-            
             </div>
          </div>
       </section>

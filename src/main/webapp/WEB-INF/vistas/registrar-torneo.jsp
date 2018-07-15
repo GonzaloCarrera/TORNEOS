@@ -48,7 +48,7 @@
                            <ul>
                               <li><form:input path="nombreTorneo" id="nombreTorneo" type="text" class="required" placeholder="Nombre del torneo (*)" required="true" /></li>
                               <li><form:input path="descripcionTorneo" type="text" id="descripcionTorneo" class="required email" placeholder="Descripcion del torneo (*)" required="true" /></li>
-                              <li><form:input path="cantidadDeEquipos" type="number" id="cantidadDeEquipos" placeholder="Cupos máximos (*)" min="4" max="50" step="2" required="true" /></li>
+                              <li><form:input path="cantidadDeEquipos" type="number" id="cantidadDeEquipos" placeholder="Cupos mï¿½ximos (*)" min="4" max="50" step="2" required="true" /></li>
                               <li><input class="btn btn-lg btn-success btn-block" type="submit" value="Registrar torneo"></li>
                            </ul>
                            <div class="hidden-me" id="contact_form_responce">

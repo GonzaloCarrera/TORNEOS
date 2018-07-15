@@ -34,14 +34,12 @@
                <ul class="breadcrumb">
                   <li><a href="home">Home</a></li>
                   <li><a href="fechas-en-curso">Fechas en Curso</a></li>
-                  <li class="active">Cargar resultados</li>
                </ul>
             </div>
       </div>
       <section id="contant" class="contant main-heading team">
          <div class="row">
             <div class="container">
-             
                      <div class="contact-us">
 						<h2 stye="text-align:center">Cargar resultados</h2>
 						<c:if test="${not empty partidos}">
@@ -53,7 +51,6 @@
 						      		 </c:forEach>
 					      		 </select>
 					      		 <input style="float:none;width:33%;height:3.8em;" type="number" name="golesEquipo2" id="golesEquipo2" placeholder="Goles equipo 2" min=0 max=99 required/> 
-					      		 
 					      		 <button class="btn btn-lg btn-success btn-block" Type="Submit"/>Cargar resultado</button>
 					      	</form:form>
 					      	 	<c:if test="${not empty error}"><h4><span>${error}</span></h4></c:if>
@@ -62,11 +59,9 @@
 					     <c:if test="${empty partidos}"><h4><span>Haz registrado el resultado de todos los partidos correspondientes a la fecha correctamente.</span></h4></c:if>
 					     		   
                      </div>
-        
             </div>
          </div>
       </section>
-
       <footer id="footer" class="footer">
          <%@include file="footer.jsp" %> 
       </footer>
